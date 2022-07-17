@@ -2,7 +2,7 @@
 This space to make an Computer Science and Artificial Intelligence 
 
 # Resources
-- [Resource about Computer Science and Artificial Intelligence] (https://github.com/wilmesis36/Computer-Science-and-Artificial-Intelligence/wiki/Resources-----Computer-Science-and--Artificial-Intelligence)
+- [Resource about Computer Science and Artificial Intelligence](https://github.com/wilmesis36/Computer-Science-and-Artificial-Intelligence/wiki/Resources-----Computer-Science-and--Artificial-Intelligence)
 
 # DataBase
 - [Topics to learn about DataBase](https://github.com/wilmesis36/Computer-Science-and-Artificial-Intelligence/wiki/Data-Base)
