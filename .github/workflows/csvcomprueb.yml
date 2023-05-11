@@ -1,0 +1,52 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+          
+- name: csv-to-csvw action
+  # You may pin to the exact commit or the version.
+  # uses: GSS-Cogs/csv-to-csvw-action@b73d40dd8046d416705602e0765a404aaaaa3bd8
+  uses: GSS-Cogs/csv-to-csvw-action@v0.0.31
+  with:
+    # Boolean indicating whether the outputs (i.e. out folder) should be committed to the current branch (default is true).
+    commit-outputs-to-branch: # optional, default is true
+    # Boolean indicating whether the outputs (i.e. out folder) should be published to the gh-pages branch and GitHub Pages (default is true).
+    publish-to-gh-pages: # optional, default is true
+    # File paths which csv-to-csvw should avoid converting into CSV-Ws
+    paths-to-exclude: # optional, default is 
+    # (WARNING: Advanced Configuration) Only convert CSV files which have a companion JSON configuration file into CSV-Ws.
+    config-required: # optional
+    # (WARNING: Advanced Configuration) Whether to output debug statements in order to help diagnose a fault or unexpected behaviour.
+    debug: # optional
