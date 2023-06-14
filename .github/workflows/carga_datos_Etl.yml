@@ -1,0 +1,74 @@
+name: Carga de datos ETL a Oracle Cloud
+
+on:
+  push:
+    paths:
+      - datos.csv
+
+jobs:
+  carga_datos_etl:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Configurar entorno Python y Oracle Instant Client
+        uses: helaili/oracle-instantclient-action@v1
+        with:
+          profile: basic
+          version: 19.8
+
+      - name: Clonar el repositorio
+        uses: actions/checkout@v2
+
+      - name: Instalar dependencias
+        run: |
+          pip install cx_Oracle
+
+      - name: Realizar proceso ETL y cargar datos en Oracle Cloud
+        run: |
+          python3 - <<EOF
+          import csv
+          import cx_Oracle
+
+          # Datos de conexión a la base de datos Oracle Cloud
+          oracle_user = "TU_USUARIO"
+          oracle_password = "TU_CONTRASEÑA"
+          oracle_host = "TU_HOST"
+          oracle_port = "TU_PUERTO"
+          oracle_service = "TU_SERVICIO"
+
+          # Archivo CSV de entrada
+          archivo_entrada = "datos.csv"
+
+          # Conjunto para almacenar los registros únicos
+          datos_transformados = set()
+
+          # Extracción y transformación de datos
+          with open(archivo_entrada, 'r') as archivo_csv:
+              lector = csv.reader(archivo_csv)
+              next(lector)  # Ignorar la primera fila de encabezados
+              for fila in lector:
+                  vendedor = fila[0]
+                  unidades_vendidas = int(fila[1])
+                  valor_unidad = float(fila[2])
+                  fecha_venta = fila[3]
+                  pais = fila[4]
+                  # Realizar las transformaciones necesarias aquí, si es necesario
+
+                  # Agregar el registro transformado al conjunto
+                  datos_transformados.add((vendedor, unidades_vendidas, valor_unidad, fecha_venta, pais))
+
+          # Establecer la conexión con la base de datos Oracle
+          dsn = cx_Oracle.makedsn(oracle_host, oracle_port, service_name=oracle_service)
+          conexion = cx_Oracle.connect(oracle_user, oracle_password, dsn)
+
+          # Insertar los registros en la base de datos
+          cursor = conexion.cursor()
+          for registro in datos_transformados:
+              cursor.execute("INSERT INTO TU_TABLA VALUES (:vendedor, :unidades, :valor, :fecha, :pais)",
+                             vendedor=registro[0], unidades=registro[1], valor=registro[2],
+                             fecha=registro[3], pais=registro[4])
+
+          # Confirmar los cambios y cerrar la conexión
+          conexion.commit()
+          conexion.close()
+          EOF
