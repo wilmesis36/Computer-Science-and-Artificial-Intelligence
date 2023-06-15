@@ -3,7 +3,7 @@ name: Carga de datos ETL a Oracle Cloud
 on:
   push:
     paths:
-      - datos.csv
+      - datos_ETL.csv
 
 jobs:
   carga_datos_etl:
@@ -30,14 +30,14 @@ jobs:
           import cx_Oracle
 
           # Datos de conexión a la base de datos Oracle Cloud
-          oracle_user = "TU_USUARIO"
-          oracle_password = "TU_CONTRASEÑA"
-          oracle_host = "TU_HOST"
-          oracle_port = "TU_PUERTO"
-          oracle_service = "TU_SERVICIO"
+          oracle_user = "ADMIN"
+          oracle_password = "WL123456789wl*"
+          oracle_host = "adb.us-chicago-1.oraclecloud.com"
+          oracle_port = "1522"
+          oracle_service = "gd7441558c4493a_bddprueba_high.adb.oraclecloud.com"
 
           # Archivo CSV de entrada
-          archivo_entrada = "datos.csv"
+          archivo_entrada = "datos_ETL.csv"
 
           # Conjunto para almacenar los registros únicos
           datos_transformados = set()
