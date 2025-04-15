@@ -125,3 +125,11 @@ cost = {
 # Ejecutar Greedy y A*
 print("Greedy de A a G:", greedy(graph, 'A', 'G', heuristic))
 print("A* de A a G:", a_star(graph, 'A', 'G', heuristic, cost))
+
+# Grafo: Representa el espacio de estados, donde cada nodo tiene un costo asociado para llegar a otros nodos. Esto es relevante para los algoritmos informados, como Greedy y A*.
+# Búsqueda en Anchura (BFS): Explora todos los nodos al mismo nivel antes de descender más profundo.
+# Búsqueda en Profundidad (DFS): Desciende por cada camino hasta el final antes de retroceder y probar otro camino.
+# Greedy: Utiliza una heurística para dirigir la búsqueda hacia el objetivo. En este caso, la heurística es una estimación de cuán cerca está un nodo del objetivo. La búsqueda se realiza en función de la heurística de cada nodo.
+# A*: Combina la búsqueda en anchura y la heurística. Considera tanto el costo acumulado para llegar a un nodo como la estimación heurística de cuán lejos está el nodo objetivo.
+# Ejecución: Se ejecutan los algoritmos de BFS, DFS, Greedy y A* para encontrar el camino desde el nodo 'A' al nodo objetivo 'G'. Además, se definen heurísticas y costos para los algoritmos Greedy y A*.
+
