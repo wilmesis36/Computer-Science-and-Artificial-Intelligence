@@ -17,10 +17,10 @@ This space to make an Computer Science and Artificial Intelligence
 --------------------------------------------------------
 ```mermaid
 graph TD
-  %% Líneas temporales principales
+  %% Línea temporal principal
   T1[1950s: Fundación de la IA]
   T2[1956: Conferencia de Dartmouth]
-  T3[1960s: Primeros programas (ELIZA, SHRDLU)]
+  T3[1960s: Primeros programas - ELIZA, SHRDLU]
   T4[1970s: Primer invierno de la IA]
   T5[1980s: Sistemas expertos]
   T6[1987: Segundo invierno de la IA]
@@ -38,18 +38,18 @@ graph TD
   D3[1986: Backpropagation redescubierto]
   D4[1998: Nacimiento de Google]
   D5[2006: "Deep Learning" por Hinton]
-  D6[2021: Codex, DALL-E, CLIP (OpenAI)]
+  D6[2021: Codex, DALL-E, CLIP]
 
   %% Sociedad y contexto
-  S1[1972: Robo Shakey]
+  S1[1972: Robot Shakey]
   S2[2011: Siri en iPhone]
-  S3[2018: Regulaciones y debates éticos]
-  S4[2024: IA en educación, medicina, política]
+  S3[2018: Debate ético en IA]
+  S4[2024: IA en salud, educación, política]
 
-  %% Enlaces principales (línea temporal)
+  %% Conexiones principales
   T1 --> T2 --> T3 --> T4 --> T5 --> T6 --> T7 --> T8 --> T9 --> T10 --> T11 --> T12 --> T13
 
-  %% Enlaces paralelos - técnicos
+  %% Conexiones técnicas
   T1 --> D1
   T2 --> D2
   T5 --> D3
@@ -57,7 +57,7 @@ graph TD
   T8 --> D5
   T12 --> D6
 
-  %% Enlaces paralelos - sociales
+  %% Conexiones sociales
   T4 --> S1
   T11 --> S2
   T12 --> S3
