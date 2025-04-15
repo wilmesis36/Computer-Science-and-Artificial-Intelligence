@@ -15,6 +15,7 @@ This space to make an Computer Science and Artificial Intelligence
 --------------------------------------------------------
 - [Back to wilmesis36 ->](https://github.com/wilmesis36)
 --------------------------------------------------------
+```mermaid
 graph TD
   %% Líneas temporales principales
   T1[1950s: Fundación de la IA]
@@ -61,3 +62,4 @@ graph TD
   T11 --> S2
   T12 --> S3
   T13 --> S4
+```
