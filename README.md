@@ -37,7 +37,7 @@ graph TD
   D2[1965: Ley de Moore]
   D3[1986: Backpropagation redescubierto]
   D4[1998: Nacimiento de Google]
-  D5[2006: "Deep Learning" por Hinton]
+  D5[2006: Deep Learning por Hinton]
   D6[2021: Codex, DALL-E, CLIP]
 
   %% Sociedad y contexto
