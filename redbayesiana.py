@@ -3,19 +3,21 @@
 !pip install pgmpy networkx matplotlib
 !pip install pgmpy
 
+# Instalar las librerías necesarias (solo si no están instaladas)
+!pip install pgmpy networkx matplotlib
 
 # Importamos las librerías necesarias
 import matplotlib.pyplot as plt
 import networkx as nx
-from pgmpy.models import BayesianNetwork
+from pgmpy.models import DiscreteBayesianNetwork
 from pgmpy.factors.discrete import TabularCPD
 from pgmpy.inference import VariableElimination
 
 # Paso 1: Crear el modelo bayesiano
-model = BayesianNetwork([('Gripe', 'Fiebre'),  # Gripe afecta a Fiebre
-                         ('Gripe', 'Tos'),    # Gripe afecta a Tos
-                         ('Resfriado', 'Fiebre'),  # Resfriado afecta a Fiebre
-                         ('Resfriado', 'Tos')])   # Resfriado afecta a Tos
+model = DiscreteBayesianNetwork([('Gripe', 'Fiebre'),  # Gripe afecta a Fiebre
+                                 ('Gripe', 'Tos'),    # Gripe afecta a Tos
+                                 ('Resfriado', 'Fiebre'),  # Resfriado afecta a Fiebre
+                                 ('Resfriado', 'Tos')])   # Resfriado afecta a Tos
 
 # Paso 2: Definir las distribuciones de probabilidad condicional (CPTs)
 cpd_gripe = TabularCPD(variable='Gripe', variable_card=2, values=[[0.7], [0.3]])  # 70% probabilidad de no tener gripe, 30% de tener gripe
