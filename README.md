@@ -16,51 +16,72 @@ This space to make an Computer Science and Artificial Intelligence
 - [Back to wilmesis36 ->](https://github.com/wilmesis36)
 --------------------------------------------------------
 ```mermaid
-graph TD
-  %% Línea temporal principal
-  T1[1950s: Fundación de la IA]
-  T2[1956: Conferencia de Dartmouth]
-  T3[1960s: Primeros programas - ELIZA, SHRDLU]
-  T4[1970s: Primer invierno de la IA]
-  T5[1980s: Sistemas expertos]
-  T6[1987: Segundo invierno de la IA]
-  T7[1997: Deep Blue vence a Kasparov]
-  T8[2000s: Auge del aprendizaje automático]
-  T9[2012: AlexNet y Deep Learning]
-  T10[2016: AlphaGo vence a Lee Sedol]
-  T11[2020: GPT-3 y modelos generativos]
-  T12[2022: ChatGPT revoluciona la IA]
-  T13[2023+: Ética, regulación y despliegue masivo]
+flowchart TD
+    %% ========== FASE DE AUTOEVALUACIÓN ==========
+    subgraph F1["Fase 1: Autoevaluación"]
+        A[1. Definir empleo soñado] --> A1[Investigar roles, sectores y cultura laboral]
+        A1 --> A2[Reflexionar sobre valores personales y estilo de vida]
+        A2 --> A3[Identificar criterios de éxito: propósito, salario, impacto]
+        A3 --> B[2. Evaluar habilidades y brechas]
+    end
 
-  %% Desarrollo técnico paralelo
-  D1[1950: Test de Turing]
-  D2[1965: Ley de Moore]
-  D3[1986: Backpropagation redescubierto]
-  D4[1998: Nacimiento de Google]
-  D5[2006: Deep Learning por Hinton]
-  D6[2021: Codex, DALL-E, CLIP]
+    %% ========== FASE DE DESARROLLO ==========
+    subgraph F2["Fase 2: Desarrollo"]
+        B --> B1[Revisar CV y experiencias previas]
+        B1 --> B2[Comparar perfil con ofertas reales]
+        B2 --> B3{¿Hay brechas clave?}
+        B3 -- Sí --> C[3. Adquirir habilidades clave]
+        B3 -- No --> D[4. Crear marca personal]
+        
+        C --> C1[Tomar cursos/certificaciones]
+        C1 --> C2[Buscar proyectos reales o voluntariado]
+        C2 --> B2
+        
+        D --> D1[Rediseñar CV y portafolio]
+        D1 --> D2[Optimizar LinkedIn y redes]
+        D2 --> D3[Generar contenido/relevante]
+    end
 
-  %% Sociedad y contexto
-  S1[1972: Robot Shakey]
-  S2[2011: Siri en iPhone]
-  S3[2018: Debate ético en IA]
-  S4[2024: IA en salud, educación, política]
+    %% ========== FASE DE POSICIONAMIENTO ==========
+    subgraph F3["Fase 3: Posicionamiento"]
+        D3 --> E[5. Construir red de contactos]
+        E --> E1[Asistir a eventos/ferias]
+        E1 --> E2[Contactar personas clave]
+        E2 --> E3[Solicitar mentoría]
+        E3 --> F[6. Aplicar estratégicamente]
+        
+        F --> F1[Buscar empresas alineadas]
+        F1 --> F2[Adaptar CV para cada postulación]
+        F2 --> F3[Registrar aplicaciones]
+    end
 
-  %% Conexiones principales
-  T1 --> T2 --> T3 --> T4 --> T5 --> T6 --> T7 --> T8 --> T9 --> T10 --> T11 --> T12 --> T13
+    %% ========== FASE DE ENTREVISTAS ==========
+    subgraph F4["Fase 4: Entrevistas"]
+        F3 --> G[7. Preparar entrevistas]
+        G --> G1[Practicar metodología STAR]
+        G1 --> G2[Analizar casos del sector]
+        G2 --> G3[Recoger feedback]
+        G3 --> H{¿Hubo oferta laboral?}
+    end
 
-  %% Conexiones técnicas
-  T1 --> D1
-  T2 --> D2
-  T5 --> D3
-  T7 --> D4
-  T8 --> D5
-  T12 --> D6
+    %% ========== DECISIONES FINALES ==========
+    subgraph F5["Evaluación Final"]
+        H -- Sí --> I[8. Evaluar oferta]
+        I --> I1[Analizar condiciones y crecimiento]
+        I1 --> J{¿Es el empleo soñado?}
+        
+        J -- Sí --> K[¡Felicidades! 🎉]
+        J -- No --> O[Rechazar con elegancia]
+        O --> F
+        
+        H -- No --> M[Revisar estrategia]
+        M --> M1{¿Qué reforzar?}
+        M1 -->|Red de contactos| E
+        M1 -->|Marca personal| D
+        M1 -->|Habilidades| C
+    end
 
-  %% Conexiones sociales
-  T4 --> S1
-  T11 --> S2
-  T12 --> S3
-  T13 --> S4
-```
+    %% ========== CONEXIONES ESPECIALES ==========
+    J -- "Puente" --> N[Aprovechar para crecer]
+    N --> A2```
 
